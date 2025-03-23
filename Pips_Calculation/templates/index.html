@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script> 
+</head>
+<body>
+    <div class="container">
+        <h1>Joe Risk Calculator </h1>
+        <form method="POST">
+            <label for="risk">Enter the Risk in $:</label>
+            <input type="number" name="risk" required>
+            <label for="pips">Enter the number of pips:</label>
+            <input type="number" name="pips" required>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result is not none and result != "" %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
